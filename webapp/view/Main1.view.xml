@@ -1,0 +1,69 @@
+<mvc:View
+    controllerName="eltp.fiori1.eltpfiori1.controller.Main1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                        <Table id="idProductTable" inset="false" items="{mProducts>/ProductCollection}">
+                            <columns>
+                                <Column id="cProductId">
+                                    <Text id="iProductId" text="ProductId"/>
+                                </Column>
+                                <Column id="cMainCategory">
+                                    <Text id="iMainCategory" text="MainCategory"/>
+                                </Column>
+                                <Column id="cWeightMeasure">
+                                  <Text id="iWeightMeasure" text="WeightMeasure"/>
+                                </Column>
+                                <Column id="cName">
+                                    <Text id="iNam" text="Namr"/>
+                                </Column>
+                                <Column id="cDateOfSale">
+                                    <Text id="iDateOfSale" text="DateOfSale"/>
+                                </Column>
+                                 <Column id="cPrice">
+                                    <Text id="iPrice" text="Price"/>
+                                </Column>
+                                <Column id="cWidth">
+                                    <Text id="iWidth" text="Width"/>
+                                </Column>
+                                <Column id="cEmpAddress">
+                                    <Text id="ctEmpaddress" text="Address Line 1"/>
+                                </Column>
+                                <Column id="cDepth">
+                                    <Text id="iDepth" text="Depth"/>
+                                </Column>
+                                <Column id="cHeight">
+                                    <Text id="iHeight" text="Height"/>
+                                </Column>                                
+                            </columns>
+                            <items>
+                             <ColumnListItem id="pli" vAlign="Middle">
+                                    <cells>
+                                        <Text id="ctProductId" text="{mProducts>ProductId}"></Text>
+                                        <Text id="ctMainCategory" text="{mProducts>MainCategory}"></Text>
+                                        
+                                        <Text id="ctWeightMeasure" text="{mProducts>WeightMeasure}"></Text>
+                                       
+                                        <Text id="ctName" text="{mProducts>Name}"></Text>
+                                        <Text id="ctDateOfSale" text="{mProducts>DateOfSale} "/>
+                                        <Text id="ctPrice" text="{mProducts>Price}"></Text>
+                                        <Text id="ctWidth" text="{mProducts>Width}"></Text>
+                                        <Text id="ctDepth" text="{mProducts>Depth}"></Text>
+                                        <Text id="ctHeight" text="{mProducts>Height}"></Text>
+                                        
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

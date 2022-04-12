@@ -1,0 +1,16 @@
+/* Enter your custom styles here */
+.SfTitle {
+
+    font-size: 20px !important;
+
+}
+
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+
+    font-size: 20px !important;
+
+    color:red;
+
+    
+
+}

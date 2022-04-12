@@ -1,0 +1,88 @@
+<core:FragmentDefinition  xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
+  <Dialog id="idDialog" title="Employee Details">
+      <IconTabBar
+          id="dialogidIconTabBarMulti"
+          expanded="{device>/isNoPhone}"
+          class="sapUiResponsiveContentPadding">
+          <items>
+              <IconTabFilter id="dialogictf1" icon="sap-icon://hint" key="info">
+                   
+                   <f:SimpleForm id="dialogSimpleFormChange480_Trial"
+                            editable="true"
+                            layout="ResponsiveGridLayout"
+                            title="Employee Details"
+                            labelSpanXL="4"
+                            labelSpanL="4"
+                            labelSpanM="4"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="0"
+                            emptySpanL="0"
+                            emptySpanM="0"
+                            emptySpanS="0"
+                            columnsXL="3"
+                            columnsL="2"
+                            columnsM="2"
+                            singleContainerFullSize="false">
+                           <f:content>
+                              <core:Title text="Personal details" id="dialogctitle" class="SfTitle" />
+                              <Label id="dialogempidl" text="{i18n>Employee.input.Employee ID} " required="true"/>
+                              <Input id="dialogempidi" value="{mEmployee>/empData/EmpId}" change="onChangeEmpId" valueState="{mEmployee>/valueState/EmpId}" valueStateText="{mEmployee>/valueStateText/EmpId}"/>
+                              <Label id="dialogfname" text="{i18n>Employee.input.Name} " required="true"/>
+                               <Input id="dialoginame" value="{mEmployee>/empData/Name}" valueState="{mEmployee>/valueState/Name}" valueStateText="{mEmployee>/valueStateText/Name}"/>
+                                <Label id="dialogEmail" text="{i18n>Employee.input.Emai}" required="true" />
+                                <Input id="dialoggmail" value="{mEmployee>/empData/Email}" type="Email" valueState="{mEmployee>/valueState/Email}" valueStateText="{mEmployee>/valueStateText/Email}"/>
+                               <Label id="dialogmobile" text="{i18n>Employee.input.MobileNumber}" required="true" />
+                              <Input id="dialogphoneno" value="{mEmployee>/empData/MobileNumber}" type="Number" valueState="{mEmployee>/valueState/MobileNumber}" valueStateText="{mEmployee>/valueStateText/MobileNumber}"/>
+                              <Label id="dialogDOB" text="{i18n>Employee.input.DOB}" required="true" />
+                              <DatePicker id="dialogdob" value="{mEmployee>/empData/DOB}" displayFormat="dd/MM/yyyy" valueFormat="MMM dd,yyyy" valueState="{mEmployee>/valueState/DOB}" valueStateText="{mEmployee>/valueStateText/DOB}"/>
+                               <Label id="dialoggender" text="{i18n>Employee.input.Gender}" required="true" />
+                                <RadioButtonGroup id="dialogrbg4"  select="onSelectGender" columns="2" selectedIndex="{mEmployee>/empData/Gender}" valueState="{mEmployee>/valueState/Gender}" >
+                               <RadioButton id="dialogRB4-1" text="Male"/>
+                               <RadioButton id="dialogRB4-2" text="Female"/>
+                                </RadioButtonGroup>
+                            </f:content>
+                       </f:SimpleForm>
+               </IconTabFilter>
+              <IconTabFilter id="dialogictf2" icon="sap-icon://attachment" key="attachments">
+                  
+                      <f:SimpleForm id="dialogSimpleFormChange480_Trial1"
+                            editable="true"
+                            layout="ResponsiveGridLayout"
+                            title="Employee Details"
+                            labelSpanXL="4"
+                            labelSpanL="4"
+                            labelSpanM="4"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="0"
+                            emptySpanL="0"
+                            emptySpanM="0"
+                            emptySpanS="0"
+                            columnsXL="3"
+                            columnsL="2"
+                            columnsM="2"
+                            singleContainerFullSize="false" >
+                            <f:content>
+                               <core:Title text="Postal Address" id="ptitle" />
+                               <Label id="dialogaddressno1" text="{i18n>Employee.input.AddressLine1}" required="true"/>
+                               <Input id="dialogaddress1" value="{mEmployee>/empData/AddressLine1}" valueState="{mEmployee>/valueState/AddressLine1}" valueStateText="{mEmployee>/valueStateText/AddressLine1}"/>
+                               <Label id="dialogaddressno2" text="Address line 2" />
+                               <Input id="dialogaddress2" value="{Address line 2}"/>
+                              <Label id="dialogcity" text="{i18n>Employee.input.city}" required="true" />
+                               <Input id="dialogplace" value="{mEmployee>/empData/city}" valueState="{mEmployee>/valueState/city}" valueStateText="{mEmployee>/valueStateText/city}"/>
+                               <Label id="dialogLandmark" text="{i18n>Employee.input.Landmark}" required="true" />
+                               <Input id="dialoglandmark" value="{mEmployee>/empData/Landmark}" valueState="{mEmployee>/valueState/Landmark}" valueStateText="{mEmployee>/valueStateText/Landmark}"/>
+                               <Label id="dialogcode" text="{i18n>Employee.input.Postalcode}" required="true" />
+                                <Input id="dialogzipcode" value="{mEmployee>/empData/Postalcode}" valueState="{mEmployee>/valueState/Postalcode}" valueStateText="{mEmployee>/valueStateText/Postalcode}"/>
+                            </f:content>
+                      </f:SimpleForm>
+               </IconTabFilter>
+            </items>
+      </IconTabBar>
+      <buttons>
+             <Button id="dialogidClose" text="Close" press="onCloseDialog" ></Button>
+              <Button id="dialogidSave" text="Save" press="onSaveEmpDetails" ></Button>
+      </buttons>
+    </Dialog>
+</core:FragmentDefinition>

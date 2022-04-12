@@ -1,0 +1,136 @@
+<mvc:View controllerName="eltp.fiori.eltpfiori.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                        <f:SimpleForm id="SimpleFormChange480_Trial" 
+                        editable="true" 
+                        layout="ResponsiveGridLayout" 
+                        title="Address" 
+                        labelSpanXL="4" 
+                        labelSpanL="4" 
+                        labelSpanM="4" 
+                        labelSpanS="12" 
+                        adjustLabelSpan="false" 
+                        emptySpanXL="0" 
+                        emptySpanL="0" 
+                        emptySpanM="0" 
+                        emptySpanS="0" 
+                        columnsXL="3" 
+                        columnsL="2" 
+                        columnsM="2" 
+                        singleContainerFullSize="false">
+                            <f:content>
+                                <core:Title text="Employee Deatails" id="office"/>
+                                <Label id="empIdL" text="{i18n>Employee.input.Employee ID}" required="true"/>
+                                <Input id="IempId" value="{mEmployee>/empData/EmpId}" change="onChangeEmpId" valueState="{mEmployee>/valueState/EmpId}" valueStateText="{mEmployee>/valueStateText/EmpId}"/>
+                                <Label id="fname" text="{i18n>Employee.input.Name}" required="true"/>
+                                <Input id="iname" value="{mEmployee>/empData/Name}" valueState="{mEmployee>/valueState/Name}" valueStateText="{mEmployee>/valueStateText/Name}"/>
+                                <Label id="Email" text="{i18n>Employee.input.Emai}" required="true"/>
+                                <Input id="gmail" value="{mEmployee>/empData/Email}" type="Email" valueState="{mEmployee>/valueState/Email}" valueStateText="{mEmployee>/valueStateText/Email}"/>
+
+                                <Label id="mobile" text="{i18n>Employee.input.MobileNumber}" required="true"/>
+                                <Input id="phoneno" value="{mEmployee>/empData/MobileNumber}" type="Number" valueState="{mEmployee>/valueState/MobileNumber}" valueStateText="{mEmployee>/valueStateText/MobileNumber}"/>
+
+                                <Label id="idLDOB" text="{i18n>Employee.input.DOB}" required="true"/>
+                                <DatePicker id="idIDOB" value="{mEmployee>/empData/DOB}" displayFormat="dd/MM/yyyy" valueFormat="MMM dd,yyyy" valueState="{mEmployee>/valueState/DOB}" valueStateText="{mEmployee>/valueStateText/DOB}"/>
+
+                                <Label id="gender" text="{i18n>Employee.input.Gender}" required="true"/>
+                                <RadioButtonGroup id="rbg4" select="onSelectGender" columns="2" selectedIndex="{mEmployee>/empData/Gender}" valueState="{mEmployee>/valueState/Gender}">
+                                    <RadioButton id="RB4-1" text="Male"/>
+                                    <RadioButton id="RB4-2" text="Female"/>
+                                </RadioButtonGroup>
+                                <core:Title text="Postal Address" id="ptitle"/>
+                                <Label id="addressno1" text="{i18n>Employee.input.AddressLine1}" required="true"/>
+                                <Input id="address1" value="{mEmployee>/empData/AddressLine1}" valueState="{mEmployee>/valueState/AddressLine1}" valueStateText="{mEmployee>/valueStateText/AddressLine1}"/>
+                                <Label id="addressno2" text="Address line 2"/>
+                                <Input id="address2" value="{Address line2}"/>
+                                <Label id="city" text="{i18n>Employee.input.city}" required="true"/>
+                                <Input id="place" value="{mEmployee>/empData/city}" valueState="{mEmployee>/valueState/city}" valueStateText="{mEmployee>/valueStateText/city}"/>
+                                <Label id="Landmark" text="{i18n>Employee.input.Landmark}" required="true"/>
+                                <Input id="landmark" value="{mEmployee>/empData/Landmark}" valueState="{mEmployee>/valueState/Landmark}" valueStateText="{mEmployee>/valueStateText/Landmark}"/>
+                                <Label id="code1" text="{i18n>Employee.input.Postalcode}" required="true"/>
+                                <Input id="pCode1" value="{mEmployee>/empData/Postalcode}" valueState="{mEmployee>/valueState/Postalcode}" valueStateText="{mEmployee>/valueStateText/Postalcode}" />
+
+                            </f:content>
+                        </f:SimpleForm>
+                        <Table id="idProductTable" items="{mEmployee>/AllEmployees}">
+
+                            <columns>
+                                <Column id="cEmpID">
+                                    <Text id="ctEmpId" text="Employee ID"/>
+                                </Column>
+                                <Column id="cEmpName">
+                                    <Text id="ctEmpName" text="Employee Name"/>
+                                </Column>
+                                <Column id="cEmpMail">
+                                  <Text id="ctEmpmail" text="EMail"/>
+                                </Column>
+                                <Column id="cEmpmn">
+                                    <Text id="ctEmpmn" text="Mobile Number"/>
+                                </Column>
+                                <Column id="cEmpDOB">
+                                    <Text id="ctEmPDOB" text="Date Of Birth"/>
+                                </Column>
+                                 <Column id="cEmppage">
+                                    <Text id="ctEmPage" text="Age"/>
+                                </Column>
+                                <Column id="cEmpGender">
+                                    <Text id="ctEmpgender" text="Gender"/>
+                                </Column>
+                                <Column id="cEmpAddress">
+                                    <Text id="ctEmpaddress" text="Address Line 1"/>
+                                </Column>
+                                <Column id="cEmpCity">
+                                    <Text id="ctEmpcity" text="City"/>
+                                </Column>
+                                <Column id="cEmpLandmark">
+                                    <Text id="ctEmplandmark" text="Landmark"/>
+                                </Column>
+                                <Column id="cEmpPC">
+                                    <Text id="ctEmpPC" text="Postal Code"/>
+                                </Column>
+                                <Column id="cEmpdelet" width="5%" hAlign="End">
+                                    <Text id="ctEmpdelet" text=" "/>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem id="cli" vAlign="Middle">
+                                    <cells>
+                                        <Text id="ctextempId" text="{mEmployee>EmpId}"></Text>  
+                                        <Text id="ctextempName" text="{mEmployee>Name}"></Text>
+                                        <!--Text id="ctextempmail" text="{mEmployee>Email}"></Text>-->
+                                        <ObjectStatus id="Ctextempmail" text="{mEmployee>Email}" state="{= ${path : 'mEmployee>Email', formatter: '.fnValidateEmail'}=== 1? 'Success' : 'Error'}"></ObjectStatus>
+                                        <!--Text id="ctextempmn" text="{mEmployee>MobileNumber}"></Text>-->
+                                        <ObjectStatus id="isonmn" text="{mEmployee>MobileNumber}" state="{=${mEmployee>MobileNumber}.length===10?'Success':'Error'}"></ObjectStatus>
+                                        <Text id="ctextempdob" text="{mEmployee>DOB}"></Text>
+                                        <!--Text id="ctextempgender" text="{mEmployee>Gender}"></Text>-->
+                                        <Text id="ctextempage" text="{path : 'mEmployee>DOB', formatter: '.fnReturnAge'}"></Text>
+                                        <Text id="isgen" text="{= ${mEmployee>Gender} ===0?  'Male' : 'Female'} "/>
+                                        <Text id="ctextempaddress" text="{mEmployee>AddressLine1}"></Text>
+                                        <Text id="ctextempcity" text="{mEmployee>city}"></Text>
+                                        <Text id="ctextemplandmark" text="{mEmployee>Landmark}"></Text>
+                                        <Text id="ctextempPC" text="{mEmployee>Postalcode}"></Text>
+                                        <HBox  id="hBox">
+                                        <Button id="idbtnedit" icon="sap-icon://edit" press="onClickEdit"></Button>
+                                        <Button id="idbtndelete" icon="sap-icon://delete" press="onClickdelete"></Button>                                        
+                                        </HBox>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                        <core:Fragment fragmentName="eltp.fiori.eltpfiori.fragments.panel" type="XML"/>
+                    </content>
+                    <footer>
+                        <Toolbar id="idtoolbar">
+                            <ToolbarSpacer id="idtoolbarS"/>
+                            <Button id="clear" text="Clear" press="onClickClear" ></Button>
+                            <Button id="submit" text="Submit" press="onClickSubmit" type="Emphasized"></Button>
+                        </Toolbar>
+                    </footer>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
